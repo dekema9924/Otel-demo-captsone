@@ -188,7 +188,6 @@ docker compose ps
 | Prometheus | http://localhost:9092 | - |
 | ElasticSearch | http://localhost:9202 | - |
 | OTel Demo | http://localhost:8082 | - |
-| Jaeger UI | http://localhost:16686 | - |
 | Load Generator | http://localhost:8089 | - |
 
 ### 5. Import Dashboards
