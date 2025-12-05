@@ -21,8 +21,8 @@ A comprehensive observability solution using OpenTelemetry, Grafana, Prometheus,
 |---|-------------|------|
 | 1 | IT-Capstone-Opentelemetry-WeeklyLog | [View Document](./docs/submissions/IT-Capstone-Opentelemetry-WeeklyLogNew_Reversed_Full.docx) |
 | 2 | Milestone 3 Presentation | [View Slides](./docs/submissions/Milestone%203%20NEW.pptx) |
-| 3 | OpenTelemetry Observability Dashboard | [View Report DOCX](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20%28final%20Written%20Report%29.docx) |
-| 4 | OpenTelemetry Observability Dashboard | [View Report PDF](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20%28final%20Written%20Report%29.pdf) |
+| 3 | OpenTelemetry Observability Dashboard Report(docx) | [View Report DOCX](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20%28final%20Written%20Report%29.docx) |
+| 4 | OpenTelemetry Observability DashboardReport(Pdf)  | [View Report PDF](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20%28final%20Written%20Report%29.pdf) |
 | 5 | OpenTelemetryProjectPlan-3 | [View Plan MPP](./docs/submissions/OpenTelemetryProjectPlan-3.mpp) |
 | 6 | OpenTelemetryProjectPlan-3 | [View Plan PDF](./docs/submissions/OpenTelemetryProjectPlan-3.pdf) |
 | 7 | OpenTelemetryProjectPlan Resource Overview | [View Overview](./docs/submissions/OpenTelemetryProjectPlanresourceoverview-3.pdf) |
