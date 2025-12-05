@@ -13,11 +13,23 @@ A comprehensive observability solution using OpenTelemetry, Grafana, Prometheus,
 
 ---
 
-Project Submission Links
-Course Deliverables - Quick Access
-#DeliverableLink1Project PlanPDF · DOCX · MPP2Architecture DiagramPNG3Observability DashboardPDF · DOCX4Resource OverviewPDF5Weekly LogDOCX6Milestone 3 PresentationPPTX7Docker Compose ConfigView File
+## 📂 Project Submission Links
 
-Note: All deliverables meet the project requirements as outlined in the course syllabus.s.
+**Course Deliverables - Quick Access**
+
+| # | Deliverable | Link |
+|---|-------------|------|
+| 1 | Project Plan | [View Documentation](./docs/submissions/OpenTelemetryProjectPlan-3.pdf) |
+| 2 | Updated Project Plan | [View Document](./docs/submissions/Updated_Project_Plan.docx) |
+| 3 | Architecture Diagram | [View Diagram](./docs/submissions/proof%20of%20KSU%20writing%20center.png) |
+| 4 | Observability Dashboard | [View Guide](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20Guide.pdf) |
+| 5 | Resource Overview | [View Overview](./docs/submissions/OpenTelemetryProjectPlanresourceoverview.pdf) |
+| 6 | Weekly Project Log | [View Log](./docs/submissions/IT-Capstone-Opentelemetry-WeeklyLog.docx) |
+| 7 | Milestone 3 Presentation | [View Slides](./docs/submissions/Milestone%203%20NEW.pptx) |
+| 8 | Docker Compose Configuration | [View File](./docker-compose.yml) |
+
+> **Note:** All deliverables meet the project requirements as outlined in the course syllabus.
+
 ---
 
 ## Table of Contents
