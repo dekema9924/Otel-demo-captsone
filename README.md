@@ -197,55 +197,45 @@ docker compose ps
 
 ![Dashboard Import](./docs/images/dashboard-import.png)
 
-## How to Add Images to This README
+Project Structure
+The project is deployed on RHEL9 at /srv/open-telemetry-capstone/otel-prototype/
+otel-prototype/
+├── docker-compose.yml              # Main orchestration file
+├── docker-compose.minimal.yml      # Minimal setup
+├── docker-compose-tests.yml        # Testing configuration
+├── buildkitd.toml                  # BuildKit configuration
+├── CHANGELOG.md                    # Version history
+├── CONTRIBUTING.md                 # Contribution guidelines
+├── LICENSE                         # Project license
+├── Makefile                        # Build automation
+├── README.md                       # This file
+├── package.json                    # Node.js dependencies
+├── package-lock.json               # Dependency lock file
+├── docs/                           # Documentation and submissions
+│   ├── submissions/                # Course deliverables
+│   └── images/                     # Screenshots and diagrams
+├── src/                            # Source code for services
+├── test/                           # Test configurations
+│   └── tracetesting/               # Trace validation tests
+├── kubernetes/                     # K8s deployment files (future)
+├── internal/                       # Internal configurations
+├── pb/                             # Protocol buffers
+├── grafana/                        # Grafana dashboards
+├── prometheus/                     # Prometheus configuration
+└── elasticsearch/                  # ElasticSearch settings
+Accessing the Project
+bash# SSH into the RHEL9 server
+ssh daniel@RHEL9
 
-### Step 1: Create Images Directory
+# Navigate to project directory
+cd /srv/open-telemetry-capstone/otel-prototype
 
-```bash
-# In your project root
-mkdir -p docs/images
-```
+# View all files
+ls -la
 
-### Step 2: Take Screenshots
+# Start the stack
+docker compose up -d
 
-Capture these screenshots from your running stack:
-
-1. **banner.png** - Create a nice project banner (can use Canva or Figma)
-2. **dashboard-overview.png** - Grafana main dashboard (http://localhost:3002)
-3. **service-overview.png** - Service health dashboard
-4. **trace-view.png** - Jaeger trace visualization (http://localhost:16686)
-5. **red-metrics.png** - RED metrics in Grafana
-6. **log-analysis.png** - ElasticSearch logs view
-7. **infrastructure-metrics.png** - Container metrics dashboard
-8. **docker-compose-up.png** - Terminal showing `docker compose ps`
-9. **trace-testing.png** - TraceTest output
-
-### Step 3: Add Images to Repository
-
-```bash
-# Copy your screenshots to the images folder
-cp ~/Downloads/dashboard-overview.png docs/images/
-cp ~/Downloads/trace-view.png docs/images/
-# ... etc
-
-# Add and commit
-git add docs/images/
-git commit -m "Add dashboard screenshots and documentation images"
-git push origin main
-```
-
-### Step 4: Verify Images Display
-
-After pushing, check your GitHub repository to ensure images render correctly.
-
-### Pro Tips for Great Screenshots:
-
-- Resolution: Capture at least 1920x1080 for clarity
-- Browser: Hide bookmarks bar, use full screen mode
-- Timing: Wait for dashboards to fully load with data
-- Annotations: Use tools like Snagit or macOS Preview to add arrows/highlights
-- File Size: Optimize PNGs with tools like TinyPNG to keep repo size manageable
-- GIFs: Use tools like LICEcap or Kap for animated demos (keep under 5MB)
 
 
 
