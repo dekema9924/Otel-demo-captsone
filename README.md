@@ -19,16 +19,16 @@ A comprehensive observability solution using OpenTelemetry, Grafana, Prometheus,
 
 | # | Deliverable | Link |
 |---|-------------|------|
-| 1 | OpenTelemetry Observability Dashboard Guide | [View Documentation](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20Guide.docx) |
-| 2 | OpenTelemetryProjectPlan-3 | [View Plan](./docs/submissions/OpenTelemetryProjectPlan-3.mpp) |
-| 3 | OpenTelemetryProjectPlan-3 PDF | [View PDF](./docs/submissions/OpenTelemetryProjectPlan-3.pdf) |
-| 4 | Proof of KSU Writing Center | [View Diagram](./docs/submissions/proof%20of%20KSU%20writing%20center.png) |
-| 5 | Updated Project Plan | [View Document](./docs/submissions/Updated_Project_Plan.docx) |
-| 6 | Updated Project Plan PDF | [View PDF](./docs/submissions/Updated_Project_Plan.pdf) |
-| 7 | IT-Capstone-Opentelemetry-WeeklyLog | [View Log](./docs/submissions/IT-Capstone-Opentelemetry-WeeklyLog.docx) |
-| 8 | Milestone 3 NEW | [View Presentation](./docs/submissions/Milestone%203%20NEW.pptx) |
-| 9 | OpenTelemetry Observability Dashboard Guide PDF | [View PDF](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20Guide.pdf) |
-| 10 | OpenTelemetryProjectPlan Resource Overview | [View Overview](./docs/submissions/OpenTelemetryProjectPlanresourceoverview.pdf) |
+| 1 | IT-Capstone-Opentelemetry-WeeklyLog | [View Document](./docs/submissions/IT-Capstone-Opentelemetry-WeeklyLogNew_Reversed_Full.docx) |
+| 2 | Milestone 3 Presentation | [View Slides](./docs/submissions/Milestone%203%20NEW.pptx) |
+| 3 | OpenTelemetry Observability Dashboard | [View Report DOCX](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20%28final%20Written%20Report%29.docx) |
+| 4 | OpenTelemetry Observability Dashboard | [View Report PDF](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20%28final%20Written%20Report%29.pdf) |
+| 5 | OpenTelemetryProjectPlan-3 | [View Plan MPP](./docs/submissions/OpenTelemetryProjectPlan-3.mpp) |
+| 6 | OpenTelemetryProjectPlan-3 | [View Plan PDF](./docs/submissions/OpenTelemetryProjectPlan-3.pdf) |
+| 7 | OpenTelemetryProjectPlan Resource Overview | [View Overview](./docs/submissions/OpenTelemetryProjectPlanresourceoverview-3.pdf) |
+| 8 | Updated Project Plan | [View Document](./docs/submissions/Updated_Project_Plan.docx) |
+| 9 | Updated Project Plan | [View PDF](./docs/submissions/Updated_Project_Plan.pdf) |
+| 10 | Proof of KSU Writing Center | [View Image](./docs/submissions/proof%20of%20KSU%20writing%20center.png) |
 
 > **Note:** All deliverables meet the project requirements as outlined in the course syllabus.
 ---
