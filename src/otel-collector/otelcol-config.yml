@@ -1,0 +1,222 @@
+# Copyright The OpenTelemetry Authors
+# SPDX-License-Identifier: Apache-2.0
+
+extensions:
+  basicauth/elastic:
+    client_auth:
+      username: ${env:ELASTICSEARCH_USERNAME}
+      password: ${env:ELASTICSEARCH_PASSWORD}
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: ${env:OTEL_COLLECTOR_HOST}:${env:OTEL_COLLECTOR_PORT_GRPC}
+      http:
+        endpoint: ${env:OTEL_COLLECTOR_HOST}:${env:OTEL_COLLECTOR_PORT_HTTP}
+        cors:
+          allowed_origins:
+            - "http://*"
+            - "https://*"
+  httpcheck/frontend-proxy:
+    targets:
+      - endpoint: http://${env:FRONTEND_PROXY_ADDR}
+  nginx:
+    endpoint: http://${env:IMAGE_PROVIDER_HOST}:${env:IMAGE_PROVIDER_PORT}/status
+    collection_interval: 10s
+  postgresql:
+    endpoint: ${POSTGRES_HOST}:${POSTGRES_PORT}
+    username: root
+    password: ${POSTGRES_PASSWORD}
+    metrics:
+      postgresql.blks_hit:
+        enabled: true
+      postgresql.blks_read:
+        enabled: true
+      postgresql.tup_fetched:
+        enabled: true
+      postgresql.tup_returned:
+        enabled: true
+      postgresql.tup_inserted:
+        enabled: true
+      postgresql.tup_updated:
+        enabled: true
+      postgresql.tup_deleted:
+        enabled: true
+      postgresql.deadlocks:
+        enabled: true
+    tls:
+      insecure: true
+  redis:
+    endpoint: "valkey-cart:6379"
+    username: "valkey"
+    collection_interval: 10s
+  hostmetrics:
+    root_path: /hostfs
+    scrapers:
+      cpu:
+        metrics:
+          system.cpu.utilization:
+            enabled: true
+          system.cpu.logical.count:
+            enabled: true
+      disk:
+      load:
+      filesystem:
+        exclude_mount_points:
+          mount_points:
+            - /dev/*
+            - /proc/*
+            - /sys/*
+            - /run/k3s/containerd/*
+            - /var/lib/docker/*
+            - /var/lib/kubelet/*
+            - /snap/*
+          match_type: regexp
+        exclude_fs_types:
+          fs_types:
+            - autofs
+            - binfmt_misc
+            - bpf
+            - cgroup2
+            - configfs
+            - debugfs
+            - devpts
+            - devtmpfs
+            - fusectl
+            - hugetlbfs
+            - iso9660
+            - mqueue
+            - nsfs
+            - overlay
+            - proc
+            - procfs
+            - pstore
+            - rpc_pipefs
+            - securityfs
+            - selinuxfs
+            - squashfs
+            - sysfs
+            - tracefs
+          match_type: strict
+      memory:
+        metrics:
+          system.memory.utilization:
+            enabled: true
+          system.memory.limit:
+            enabled: true
+      network:
+      paging:
+        metrics:
+          system.paging.usage:
+            enabled: true
+      processes:
+      process:
+        mute_process_exe_error: true
+        mute_process_io_error: true
+        mute_process_user_error: true
+      system:
+        metrics:
+          system.uptime:
+            enabled: true
+
+exporters:
+  debug:
+  # Elasticsearch for Logs and Traces
+  elasticsearch:
+    endpoints: ["http://${env:ELASTICSEARCH_HOST}:${env:ELASTICSEARCH_PORT}"]
+    logs_index: otel-logs
+    traces_index: otel-traces
+    auth:
+      authenticator: basicauth/elastic
+    tls:
+      insecure: true
+    mapping:
+      mode: ecs
+    discover:
+      on_start: true
+    flush:
+      bytes: 5242880
+  # Prometheus for Metrics
+  prometheus:
+    endpoint: "0.0.0.0:8889"
+  otlphttp/prometheus:
+    endpoint: "http://prometheus:9090/api/v1/otlp"
+    tls:
+      insecure: true
+
+processors:
+  batch:
+  memory_limiter:
+    check_interval: 5s
+    limit_percentage: 80
+    spike_limit_percentage: 25
+  resourcedetection:
+    detectors: [env, docker, system]
+  transform:
+    error_mode: ignore
+    trace_statements:
+      - context: span
+        statements:
+          - replace_pattern(name, "\\?.*", "")
+          - replace_match(name, "GET /api/products/*", "GET /api/products/{productId}")
+
+connectors:
+  spanmetrics:
+
+service:
+  extensions: [basicauth/elastic]
+  pipelines:
+    # Traces → Elasticsearch
+    traces:
+      receivers:
+        - otlp
+      processors:
+        - resourcedetection
+        - memory_limiter
+        - transform
+        - batch
+      exporters:
+        - elasticsearch
+        - debug
+        - spanmetrics
+    # Metrics → Prometheus
+    metrics:
+      receivers:
+        - httpcheck/frontend-proxy
+        - hostmetrics
+        - nginx
+        - otlp
+        - postgresql
+        - redis
+        - spanmetrics
+      processors:
+        - resourcedetection
+        - memory_limiter
+        - batch
+      exporters:
+        - prometheus
+        - otlphttp/prometheus
+        - debug
+    # Logs → Elasticsearch
+    logs:
+      receivers:
+        - otlp
+      processors:
+        - resourcedetection
+        - memory_limiter
+        - batch
+      exporters:
+        - elasticsearch
+        - debug
+  telemetry:
+    metrics:
+      level: detailed
+      readers:
+        - periodic:
+            interval: 10000
+            timeout: 5000
+            exporter:
+              otlp:
+                protocol: http/protobuf
+                endpoint: http://${env:OTEL_COLLECTOR_HOST}:${env:OTEL_COLLECTOR_PORT_HTTP}
