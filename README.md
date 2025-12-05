@@ -1,39 +1,67 @@
-# 🔭 OpenTelemetry Observability Dashboard
+# OpenTelemetry Observability Dashboard
+
+[![OpenTelemetry](https://img.shields.io/badge/OpenTelemetry-Enabled-blue)]()
+[![Grafana](https://img.shields.io/badge/Grafana-Dashboard-orange)]()
+[![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-red)]()
+[![ElasticSearch](https://img.shields.io/badge/ElasticSearch-Logs%20%26%20Traces-green)]()
+[![Docker](https://img.shields.io/badge/Docker-Compose-informational)]()
+[![Linux](https://img.shields.io/badge/Linux-RHEL9-critical)]()
 
 A comprehensive observability solution using OpenTelemetry, Grafana, Prometheus, and ElasticSearch to monitor distributed applications with full-stack visibility into metrics, traces, and logs.
 
 ![Project Banner](./docs/images/banner.png)
 
-## 📑 Table of Contents
+---
 
-- [Overview](#-overview)
-- [Architecture](#-architecture)
-- [Features](#-features)
-- [Prerequisites](#-prerequisites)
-- [Quick Start](#-quick-start)
-- [Dashboard Screenshots](#-dashboard-screenshots)
-- [Configuration](#-configuration)
-- [Trace Testing](#-trace-testing)
-- [Troubleshooting](#-troubleshooting)
-- [Team Contributions](#-team-contributions)
-- [Future Roadmap](#-future-roadmap)
-- [License](#-license)
+## Project Submission Links
 
-## 🎯 Overview
+**Course Deliverables - Quick Access:**
+
+| # | Deliverable | Link |
+|---|-------------|------|
+| 1 | **Project Documentation** | [View Documentation](./docs/PROJECT_DOCUMENTATION.md) |
+| 2 | **Architecture Diagram** | [View Diagram](./docs/images/architecture.png) |
+| 3 | **Docker Compose Configuration** | [View File](./docker-compose.yaml) |
+| 4 | **Grafana Dashboard Exports** | [View Dashboards](./grafana/dashboards/) |
+| 5 | **Prometheus Configuration** | [View Config](./prometheus/prometheus.yml) |
+| 6 | **Trace Testing Setup** | [View Tests](./test/tracetesting/) |
+| 7 | **Team Presentation Slides** | [View Slides](./docs/PRESENTATION.pdf) |
+| 8 | **Demo Video** | [Watch Demo](./docs/DEMO_VIDEO.md) |
+
+> **Note:** All deliverables meet the project requirements as outlined in the course syllabus.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Quick Start](#quick-start)
+- [Dashboard Screenshots](#dashboard-screenshots)
+- [Configuration](#configuration)
+- [Trace Testing](#trace-testing)
+- [Troubleshooting](#troubleshooting)
+- [Team Contributions](#team-contributions)
+- [Future Roadmap](#future-roadmap)
+- [License](#license)
+
+## Overview
 
 This project implements a production-ready OpenTelemetry observability stack that provides complete visibility into distributed applications. Built on Docker and deployed on RHEL9, it demonstrates enterprise-grade monitoring using open-source tools.
 
 ### What This Project Offers
 
-- **Full-Stack Observability**: Unified view of metrics, logs, and traces
-- **Real-Time Monitoring**: Live dashboards with sub-second refresh rates
-- **Distributed Tracing**: End-to-end request path visualization
-- **Container-Ready**: Fully containerized with Docker Compose
-- **Production Patterns**: Best practices for observability implementation
+- Full-Stack Observability: Unified view of metrics, logs, and traces
+- Real-Time Monitoring: Live dashboards with sub-second refresh rates
+- Distributed Tracing: End-to-end request path visualization
+- Container-Ready: Fully containerized with Docker Compose
+- Production Patterns: Best practices for observability implementation
 
 ![Dashboard Overview](./docs/images/dashboard-overview.png)
 
-## 🏗️ Architecture
+## Architecture
 
 Our observability stack follows the OpenTelemetry specification with multiple backend integrations:
 
@@ -74,34 +102,35 @@ Our observability stack follows the OpenTelemetry specification with multiple ba
 
 | Component | Purpose | Port |
 |-----------|---------|------|
-| **OpenTelemetry Demo** | Generates realistic telemetry data | 8080 |
-| **OTel Collector** | Receives and exports telemetry | 4317, 4318 |
-| **Prometheus** | Time-series metrics storage | 9090 |
-| **ElasticSearch** | Log and trace storage | 9200 |
-| **Grafana** | Visualization and dashboards | 3000 |
-| **Kibana** (optional) | ElasticSearch UI | 5601 |
+| OpenTelemetry Demo | Generates realistic telemetry data | 8082 |
+| OTel Collector | Receives and exports telemetry | 4317, 4318 |
+| Prometheus | Time-series metrics storage | 9092 |
+| ElasticSearch | Log and trace storage | 9202 |
+| Grafana | Visualization and dashboards | 3002 |
+| Jaeger UI | Trace visualization | 16686 |
+| Load Generator | Synthetic traffic generation | 8089 |
 
-## ✨ Features
+## Features
 
-### 🎨 Unified Dashboards
-- **Service Health Overview**: Real-time status of all microservices
-- **RED Metrics**: Rate, Errors, Duration for each service
-- **Resource Utilization**: CPU, memory, and network metrics
-- **Business Metrics**: Custom application-level KPIs
+### Unified Dashboards
+- Service Health Overview: Real-time status of all microservices
+- RED Metrics: Rate, Errors, Duration for each service
+- Resource Utilization: CPU, memory, and network metrics
+- Business Metrics: Custom application-level KPIs
 
-### 🔍 Distributed Tracing
+### Distributed Tracing
 - End-to-end request flow visualization
 - Span-level performance analysis
 - Service dependency mapping
 - Error propagation tracking
 
-### 📊 Metrics Collection
+### Metrics Collection
 - Automatic instrumentation metrics
 - Custom business metrics
 - Infrastructure metrics
 - Container metrics
 
-### 📝 Log Aggregation
+### Log Aggregation
 - Centralized log collection
 - Structured logging with context
 - Log correlation with traces
@@ -109,16 +138,16 @@ Our observability stack follows the OpenTelemetry specification with multiple ba
 
 ![Features Demo](./docs/images/features-demo.gif)
 
-## 🔧 Prerequisites
+## Prerequisites
 
-- **Docker**: Version 20.10+
-- **Docker Compose**: Version 2.0+
-- **Linux Server**: RHEL9, Ubuntu 20.04+, or similar
-- **RAM**: Minimum 8GB (16GB recommended)
-- **CPU**: 4+ cores recommended
-- **Disk**: 20GB+ free space
+- Docker: Version 20.10+
+- Docker Compose: Version 2.0+
+- Linux Server: RHEL9, Ubuntu 20.04+, or similar
+- RAM: Minimum 8GB (16GB recommended)
+- CPU: 4+ cores recommended
+- Disk: 20GB+ free space
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone the Repository
 
@@ -152,21 +181,92 @@ docker compose ps
 
 | Service | URL | Default Credentials |
 |---------|-----|---------------------|
-| **Grafana** | http://localhost:3000 | admin / admin |
-| **Prometheus** | http://localhost:9090 | - |
-| **ElasticSearch** | http://localhost:9200 | - |
-| **OTel Demo** | http://localhost:8080 | - |
+| Grafana | http://localhost:3002 | admin / admin |
+| Prometheus | http://localhost:9092 | - |
+| ElasticSearch | http://localhost:9202 | - |
+| OTel Demo | http://localhost:8082 | - |
+| Jaeger UI | http://localhost:16686 | - |
+| Load Generator | http://localhost:8089 | - |
 
 ### 5. Import Dashboards
 
-1. Navigate to Grafana at http://localhost:3000
-2. Go to **Dashboards** → **Import**
+1. Navigate to Grafana at http://localhost:3002
+2. Go to Dashboards → Import
 3. Upload dashboards from `grafana/dashboards/` directory
 4. Select Prometheus and ElasticSearch as data sources
 
 ![Dashboard Import](./docs/images/dashboard-import.png)
 
-## 📸 Dashboard Screenshots
+## How to Add Images to This README
+
+### Step 1: Create Images Directory
+
+```bash
+# In your project root
+mkdir -p docs/images
+```
+
+### Step 2: Take Screenshots
+
+Capture these screenshots from your running stack:
+
+1. **banner.png** - Create a nice project banner (can use Canva or Figma)
+2. **dashboard-overview.png** - Grafana main dashboard (http://localhost:3002)
+3. **service-overview.png** - Service health dashboard
+4. **trace-view.png** - Jaeger trace visualization (http://localhost:16686)
+5. **red-metrics.png** - RED metrics in Grafana
+6. **log-analysis.png** - ElasticSearch logs view
+7. **infrastructure-metrics.png** - Container metrics dashboard
+8. **docker-compose-up.png** - Terminal showing `docker compose ps`
+9. **trace-testing.png** - TraceTest output
+
+### Step 3: Add Images to Repository
+
+```bash
+# Copy your screenshots to the images folder
+cp ~/Downloads/dashboard-overview.png docs/images/
+cp ~/Downloads/trace-view.png docs/images/
+# ... etc
+
+# Add and commit
+git add docs/images/
+git commit -m "Add dashboard screenshots and documentation images"
+git push origin main
+```
+
+### Step 4: Verify Images Display
+
+After pushing, check your GitHub repository to ensure images render correctly.
+
+### Pro Tips for Great Screenshots:
+
+- Resolution: Capture at least 1920x1080 for clarity
+- Browser: Hide bookmarks bar, use full screen mode
+- Timing: Wait for dashboards to fully load with data
+- Annotations: Use tools like Snagit or macOS Preview to add arrows/highlights
+- File Size: Optimize PNGs with tools like TinyPNG to keep repo size manageable
+- GIFs: Use tools like LICEcap or Kap for animated demos (keep under 5MB)
+
+### Alternative: Using Direct Image Links
+
+If you prefer not to store images in the repo, you can use image hosting:
+
+```markdown
+<!-- Using GitHub Issues -->
+![Dashboard](https://user-images.githubusercontent.com/YOUR_USER_ID/IMAGE_ID.png)
+
+<!-- Using Imgur -->
+![Dashboard](https://i.imgur.com/XXXXX.png)
+```
+
+To upload images via GitHub Issues:
+1. Create a new issue in your repo
+2. Drag and drop images into the comment box
+3. Copy the generated URL
+4. Close the issue (or keep as documentation)
+5. Use the URL in your README
+
+## Dashboard Screenshots
 
 ### Service Overview Dashboard
 Real-time health and performance metrics for all microservices.
@@ -193,7 +293,7 @@ Container and host-level resource monitoring.
 
 ![Infrastructure](./docs/images/infrastructure-metrics.png)
 
-## ⚙️ Configuration
+## Configuration
 
 ### OpenTelemetry Collector
 
@@ -210,10 +310,10 @@ receivers:
 
 exporters:
   prometheus:
-    endpoint: "prometheus:9090"
+    endpoint: "prometheus:9092"
   
   elasticsearch:
-    endpoints: ["http://elasticsearch:9200"]
+    endpoints: ["http://elasticsearch:9202"]
     logs_index: otel-logs
     traces_index: otel-traces
 
@@ -248,7 +348,7 @@ scrape_configs:
   
   - job_name: 'demo-services'
     static_configs:
-      - targets: ['frontend:8080']
+      - targets: ['frontend:8082']
 ```
 
 ### Docker Compose Networking
@@ -261,7 +361,7 @@ networks:
     driver: bridge
 ```
 
-## 🧪 Trace Testing
+## Trace Testing
 
 We use TraceTest to validate trace completeness and correctness.
 
@@ -275,12 +375,12 @@ docker compose run tracetest test run \
 
 ### What We Test
 
-- ✅ Span creation and propagation
-- ✅ Trace context preservation
-- ✅ Service-to-service correlation
-- ✅ Attribute completeness
-- ✅ Error propagation
-- ✅ Performance thresholds
+- Span creation and propagation
+- Trace context preservation
+- Service-to-service correlation
+- Attribute completeness
+- Error propagation
+- Performance thresholds
 
 ![Trace Testing](./docs/images/trace-testing.png)
 
@@ -294,7 +394,7 @@ docker compose run tracetest test run \
   ✓ No error spans detected
 ```
 
-## 🔍 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -312,7 +412,7 @@ docker compose restart elasticsearch
 
 ```bash
 # Check if ports are in use
-sudo netstat -tulpn | grep -E '3000|9090|9200|8080'
+sudo netstat -tulpn | grep -E '3002|9092|9202|8082|16686|8089'
 
 # Modify ports in docker-compose.yaml if needed
 ```
@@ -330,9 +430,9 @@ echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
 #### No Data in Grafana
 
 1. Verify data sources are configured correctly
-2. Check Prometheus is scraping metrics: http://localhost:9090/targets
-3. Verify ElasticSearch has indices: `curl http://localhost:9200/_cat/indices`
-4. Generate traffic to the demo app: http://localhost:8080
+2. Check Prometheus is scraping metrics: http://localhost:9092/targets
+3. Verify ElasticSearch has indices: `curl http://localhost:9202/_cat/indices`
+4. Generate traffic to the demo app: http://localhost:8082
 
 ### Health Checks
 
@@ -341,27 +441,30 @@ echo "vm.max_map_count=262144" | sudo tee -a /etc/sysctl.conf
 docker compose ps
 
 # Test Prometheus
-curl http://localhost:9090/-/healthy
+curl http://localhost:9092/-/healthy
 
 # Test ElasticSearch
-curl http://localhost:9200/_cluster/health
+curl http://localhost:9202/_cluster/health
 
 # Test Grafana
-curl http://localhost:3000/api/health
+curl http://localhost:3002/api/health
+
+# Test Jaeger
+curl http://localhost:16686/
 ```
 
-## 👥 Team Contributions
+## Team Contributions
 
 This project was a collaborative effort with contributions across multiple domains:
 
-- **Infrastructure Setup**: Server provisioning and Docker configuration
-- **OTel Integration**: Collector setup and instrumentation
-- **Backend Configuration**: Prometheus and ElasticSearch setup
-- **Dashboard Design**: Grafana dashboard creation and optimization
-- **Testing Framework**: Trace validation and test automation
-- **Documentation**: Technical writing and user guides
+- Infrastructure Setup: Server provisioning and Docker configuration
+- OTel Integration: Collector setup and instrumentation
+- Backend Configuration: Prometheus and ElasticSearch setup
+- Dashboard Design: Grafana dashboard creation and optimization
+- Testing Framework: Trace validation and test automation
+- Documentation: Technical writing and user guides
 
-## 🗺️ Future Roadmap
+## Future Roadmap
 
 ### Short Term
 - [ ] Add Jaeger UI as alternative trace viewer
@@ -381,14 +484,14 @@ This project was a collaborative effort with contributions across multiple domai
 - [ ] Cost optimization recommendations
 - [ ] Auto-remediation workflows
 
-## 📚 Additional Resources
+##  Additional Resources
 
 - [OpenTelemetry Documentation](https://opentelemetry.io/docs/)
 - [Grafana Dashboard Best Practices](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/best-practices/)
 - [Prometheus Query Examples](https://prometheus.io/docs/prometheus/latest/querying/examples/)
 - [ElasticSearch Index Management](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-management.html)
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -398,11 +501,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - OpenTelemetry Community for the demo application
 - Grafana Labs for visualization tools
@@ -411,6 +514,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ for modern observability**
+Built with care for modern observability
 
 For questions or support, please open an issue on GitHub.
