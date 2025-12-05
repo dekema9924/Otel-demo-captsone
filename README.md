@@ -247,51 +247,34 @@ After pushing, check your GitHub repository to ensure images render correctly.
 - File Size: Optimize PNGs with tools like TinyPNG to keep repo size manageable
 - GIFs: Use tools like LICEcap or Kap for animated demos (keep under 5MB)
 
-### Alternative: Using Direct Image Links
 
-If you prefer not to store images in the repo, you can use image hosting:
-
-```markdown
-<!-- Using GitHub Issues -->
-![Dashboard](https://user-images.githubusercontent.com/YOUR_USER_ID/IMAGE_ID.png)
-
-<!-- Using Imgur -->
-![Dashboard](https://i.imgur.com/XXXXX.png)
-```
-
-To upload images via GitHub Issues:
-1. Create a new issue in your repo
-2. Drag and drop images into the comment box
-3. Copy the generated URL
-4. Close the issue (or keep as documentation)
-5. Use the URL in your README
 
 ## Dashboard Screenshots
 
 ### Service Overview Dashboard
 Real-time health and performance metrics for all microservices.
 
-![Service Overview](./docs/images/service-overview.png)
+![Service Overview](https://private-user-images.githubusercontent.com/143339000/522785959-e2331647-6aba-4fd7-82da-81271a065edd.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjQ5MTE3ODIsIm5iZiI6MTc2NDkxMTQ4MiwicGF0aCI6Ii8xNDMzMzkwMDAvNTIyNzg1OTU5LWUyMzMxNjQ3LTZhYmEtNGZkNy04MmRhLTgxMjcxYTA2NWVkZC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIwNVQwNTExMjJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mYTVmNDM5Y2E3MjllYWVhMDQ5ZjQ2ZDVmM2I3ZjkxNzFhMDc4YzliZTdlNTY2NmMwYzkyMTUwZDA0ZjlhN2ZhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.9ywiEv-nSfd7p9VQRDpY9aca-IXyPGQMI_xGSwvu-qo)
 
 ### Distributed Tracing View
 Visualize complete request paths across services.
 
-![Trace View](./docs/images/trace-view.png)
+![Trace View]([./docs/images/trace-view.png](https://private-user-images.githubusercontent.com/143339000/522785931-18813b60-4dbf-4e71-b471-a12f10dc648b.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjQ5MTE3ODIsIm5iZiI6MTc2NDkxMTQ4MiwicGF0aCI6Ii8xNDMzMzkwMDAvNTIyNzg1OTMxLTE4ODEzYjYwLTRkYmYtNGU3MS1iNDcxLWExMmYxMGRjNjQ4Yi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIwNVQwNTExMjJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02Yjk3M2E3OTE4ZDIwOTdhYzkzYzIxMjVkNmU4MzlmZDhkNTdlOGFkYzA3MTFkM2ZhN2E2YWM1YzI2NTE1NjIwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.N8BLuZj_zKG6aVzEJKdJL3h18yj56LK9Y2q1ZKg-Pu4))
 
 ### RED Metrics Dashboard
 Monitor Rate, Errors, and Duration for critical services.
 
-![RED Metrics](./docs/images/red-metrics.png)
+![RED Metrics](https://private-user-images.githubusercontent.com/143339000/522787244-c8a13ce5-f042-48a2-b55b-8b21c4fca8bf.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjQ5MTIwODQsIm5iZiI6MTc2NDkxMTc4NCwicGF0aCI6Ii8xNDMzMzkwMDAvNTIyNzg3MjQ0LWM4YTEzY2U1LWYwNDItNDhhMi1iNTViLThiMjFjNGZjYThiZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIwNVQwNTE2MjRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zNzk4MDZjNTA0NmU5MGZjN2U4NjhkMjkwYTBiYTMyODIwZWNhMzdlNTg4MmE3NzBjMTQ2YmYxYWY3NzYzZTAzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.tAn1WveEB60T9UndI-EjGHfMfqgLkIUKENR0fq2CuQ4)
 
 ### Log Analysis
 Centralized log exploration with filtering and correlation.
 
-![Log Analysis](./docs/images/log-analysis.png)
+![Log Analysis]([./docs/images/log-analysis.png](https://private-user-images.githubusercontent.com/143339000/522787658-1105730e-10a1-432b-afe5-964a161407ca.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjQ5MTIyNTIsIm5iZiI6MTc2NDkxMTk1MiwicGF0aCI6Ii8xNDMzMzkwMDAvNTIyNzg3NjU4LTExMDU3MzBlLTEwYTEtNDMyYi1hZmU1LTk2NGExNjE0MDdjYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIwNVQwNTE5MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jODY5ODRjZWE1OWJhMmU1MjM5ZmNkMDJjNTZhN2U2ZTNjZWIxYTEyZWEzODk4YWYyMzM2NjM4MjgyZjExYmUwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.9fETmvurobJkDo2hOaK_NYwsQ4k1ireaGgg7B77PMSY))
 
 ### Infrastructure Metrics
 Container and host-level resource monitoring.
 
-![Infrastructure](./docs/images/infrastructure-metrics.png)
+![Infrastructure]([./docs/images/infrastructure-metrics.png](https://private-user-images.githubusercontent.com/143339000/522787874-72e9339d-1a22-4ed8-9b10-edce69c700a4.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjQ5MTIyNTIsIm5iZiI6MTc2NDkxMTk1MiwicGF0aCI6Ii8xNDMzMzkwMDAvNTIyNzg3ODc0LTcyZTkzMzlkLTFhMjItNGVkOC05YjEwLWVkY2U2OWM3MDBhNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIwNVQwNTE5MTJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00ZWY1NWJmMjNlOWEzYjMwYWUzOGYyNmIyN2M4YWE0ZjlkM2I1ZDcyODlkY2FhY2U5ODc5M2Q0NmUyNmZlZDU1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.qrZp_bLSvtb4ghlQRJDxCBhjvBRF3BH-MOB8SXqW6wU))
 
 ## Configuration
 
