@@ -29,8 +29,7 @@ A comprehensive observability solution using OpenTelemetry, Grafana, Prometheus,
 | 8 | Updated Project Plan | [View Document](./docs/submissions/Updated_Project_Plan.docx) |
 | 9 | Updated Project Plan | [View PDF](./docs/submissions/Updated_Project_Plan.pdf) |
 | 10 | Proof of KSU Writing Center | [View Image](./docs/submissions/proof%20of%20KSU%20writing%20center.png) |
-| 11 | Demo Video | [Watch Demo]([YOUR-VIDEO-LINK-HERE)](https://kennesawedu.sharepoint.com/:v:/r/sites/Team-ObservabilityDashboard/Shared%20Documents/General/Milestone%203%20Submission/Milestone%204.mp4?csf=1&web=1&e=Zws2Ma&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
-
+| 11 | Demo Video - Milestone 4 | [Watch Demo](https://kennesawedu.sharepoint.com/:v:/r/sites/Team-ObservabilityDashboard/Shared%20Documents/General/Milestone%203%20Submission/Milestone%204.mp4?csf=1&web=1&e=Zws2Ma&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 
 > **Note:** All deliverables meet the project requirements as outlined in the course syllabus.
 ---
