@@ -19,17 +19,18 @@ A comprehensive observability solution using OpenTelemetry, Grafana, Prometheus,
 
 | # | Deliverable | Link |
 |---|-------------|------|
-| 1 | Project Plan | [View Documentation](./docs/submissions/OpenTelemetryProjectPlan-3.pdf) |
-| 2 | Updated Project Plan | [View Document](./docs/submissions/Updated_Project_Plan.docx) |
-| 3 | Architecture Diagram | [View Diagram](./docs/submissions/proof%20of%20KSU%20writing%20center.png) |
-| 4 | Observability Dashboard | [View Guide](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20Guide.pdf) |
-| 5 | Resource Overview | [View Overview](./docs/submissions/OpenTelemetryProjectPlanresourceoverview.pdf) |
-| 6 | Weekly Project Log | [View Log](./docs/submissions/IT-Capstone-Opentelemetry-WeeklyLog.docx) |
-| 7 | Milestone 3 Presentation | [View Slides](./docs/submissions/Milestone%203%20NEW.pptx) |
-| 8 | Docker Compose Configuration | [View File](./docker-compose.yml) |
+| 1 | OpenTelemetry Observability Dashboard Guide | [View Documentation](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20Guide.docx) |
+| 2 | OpenTelemetryProjectPlan-3 | [View Plan](./docs/submissions/OpenTelemetryProjectPlan-3.mpp) |
+| 3 | OpenTelemetryProjectPlan-3 PDF | [View PDF](./docs/submissions/OpenTelemetryProjectPlan-3.pdf) |
+| 4 | Proof of KSU Writing Center | [View Diagram](./docs/submissions/proof%20of%20KSU%20writing%20center.png) |
+| 5 | Updated Project Plan | [View Document](./docs/submissions/Updated_Project_Plan.docx) |
+| 6 | Updated Project Plan PDF | [View PDF](./docs/submissions/Updated_Project_Plan.pdf) |
+| 7 | IT-Capstone-Opentelemetry-WeeklyLog | [View Log](./docs/submissions/IT-Capstone-Opentelemetry-WeeklyLog.docx) |
+| 8 | Milestone 3 NEW | [View Presentation](./docs/submissions/Milestone%203%20NEW.pptx) |
+| 9 | OpenTelemetry Observability Dashboard Guide PDF | [View PDF](./docs/submissions/OpenTelemetry%20Observability%20Dashboard%20Guide.pdf) |
+| 10 | OpenTelemetryProjectPlan Resource Overview | [View Overview](./docs/submissions/OpenTelemetryProjectPlanresourceoverview.pdf) |
 
 > **Note:** All deliverables meet the project requirements as outlined in the course syllabus.
-
 ---
 
 ## Table of Contents
