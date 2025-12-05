@@ -201,29 +201,63 @@ docker compose ps
 Project Structure
 The project is deployed on RHEL9 at /srv/open-telemetry-capstone/otel-prototype/
 otel-prototype/
-├── docker-compose.yml # Main orchestration file
-├── docker-compose.minimal.yml # Minimal setup
-├── docker-compose-tests.yml # Testing configuration
-├── buildkitd.toml # BuildKit configuration
-├── CHANGELOG.md # Version history
-├── CONTRIBUTING.md # Contribution guidelines
-├── LICENSE # Project license
-├── Makefile # Build automation
-├── README.md # This file
-├── package.json # Node.js dependencies
-├── package-lock.json # Dependency lock file
-├── docs/ # Documentation and submissions
-│ ├── submissions/ # Course deliverables
-│ └── images/ # Screenshots and diagrams
-├── src/ # Source code for services
-├── test/ # Test configurations
-│ └── tracetesting/ # Trace validation tests
-├── kubernetes/ # K8s deployment files (future)
-├── internal/ # Internal configurations
-├── pb/ # Protocol buffers
-├── grafana/ # Grafana dashboards
-├── prometheus/ # Prometheus configuration
-└── elasticsearch/ # ElasticSearch settings
+├── .github/                      # GitHub workflows and configurations
+├── internal/                     # Internal configurations
+├── kubernetes/                   # K8s deployment files (future)
+├── pb/                          # Protocol buffers
+├── src/                         # Source code for services
+├── test/                        # Test configurations
+├── .dockerignore                # Docker ignore patterns
+├── .env                         # Environment variables
+├── .env.arm64                   # ARM64 environment config
+├── .env.override                # Environment overrides
+├── .gitattributes               # Git attributes
+├── .gitignore                   # Git ignore patterns
+├── .licensecr.json              # License configuration
+├── .linkspector.yml             # Link checking config
+├── .markdownlint.yaml           # Markdown linting rules
+├── .yamllint                    # YAML linting rules
+├── [ilm]                        # Index lifecycle management
+├── [product-reviews]            # Product reviews module
+├── [shipping]                   # Shipping module
+├── buildkitd.toml              # BuildKit configuration
+├── CHANGELOG.md                 # Version history
+├── CONTRIBUTING.md              # Contribution guidelines
+├── docker-compose-tests.yml    # Testing configuration
+├── docker-compose.minimal.yml  # Minimal setup
+├── docker-compose.yml          # Main orchestration file
+├── docker-gen-proto.sh         # Protocol buffer generation
+├── ERROR                        # Error logs/config
+├── generate_test_errors.sh     # Error generation script
+├── ide-gen-proto.sh            # IDE proto generation
+├── LICENSE                      # Project license
+├── Makefile                     # Build automation
+├── package-lock.json           # Node.js dependencies lock
+├── package.json                # Node.js dependencies
+└── README.md                    # This file
+
+### Subdirectories
+
+#### `/submodules/`
+Course deliverables
+
+#### `/images/`
+Screenshots and diagrams
+
+#### `/tracetesting/`
+Trace validation tests
+
+#### `/docs/`
+Documentation and submissions
+
+#### `/grafana/`
+Grafana dashboards
+
+#### `/prometheus/`
+Prometheus configuration
+
+#### `/elasticsearch/`
+ElasticSearch settings
 
 ## Dashboard Screenshots
 
