@@ -159,6 +159,7 @@ cd Otel-demo-captsone
 ### 2. Start the Stack
 
 ```bash
+# Open or start Docker Desktop
 # Start all services in detached mode
 docker compose up -d
 
@@ -181,7 +182,7 @@ docker compose ps
 
 | Service | URL | Default Credentials |
 |---------|-----|---------------------|
-| Grafana | http://localhost:3002 | admin / admin |
+| Grafana | http://localhost:3002 | admin / Danielekema#7 |
 | Prometheus | http://localhost:9092 | - |
 | ElasticSearch | http://localhost:9202 | - |
 | OTel Demo | http://localhost:8082 | - |
@@ -200,44 +201,29 @@ docker compose ps
 Project Structure
 The project is deployed on RHEL9 at /srv/open-telemetry-capstone/otel-prototype/
 otel-prototype/
-├── docker-compose.yml              # Main orchestration file
-├── docker-compose.minimal.yml      # Minimal setup
-├── docker-compose-tests.yml        # Testing configuration
-├── buildkitd.toml                  # BuildKit configuration
-├── CHANGELOG.md                    # Version history
-├── CONTRIBUTING.md                 # Contribution guidelines
-├── LICENSE                         # Project license
-├── Makefile                        # Build automation
-├── README.md                       # This file
-├── package.json                    # Node.js dependencies
-├── package-lock.json               # Dependency lock file
-├── docs/                           # Documentation and submissions
-│   ├── submissions/                # Course deliverables
-│   └── images/                     # Screenshots and diagrams
-├── src/                            # Source code for services
-├── test/                           # Test configurations
-│   └── tracetesting/               # Trace validation tests
-├── kubernetes/                     # K8s deployment files (future)
-├── internal/                       # Internal configurations
-├── pb/                             # Protocol buffers
-├── grafana/                        # Grafana dashboards
-├── prometheus/                     # Prometheus configuration
-└── elasticsearch/                  # ElasticSearch settings
-Accessing the Project
-bash# SSH into the RHEL9 server
-ssh daniel@RHEL9
-
-# Navigate to project directory
-cd /srv/open-telemetry-capstone/otel-prototype
-
-# View all files
-ls -la
-
-# Start the stack
-docker compose up -d
-
-
-
+├── docker-compose.yml # Main orchestration file
+├── docker-compose.minimal.yml # Minimal setup
+├── docker-compose-tests.yml # Testing configuration
+├── buildkitd.toml # BuildKit configuration
+├── CHANGELOG.md # Version history
+├── CONTRIBUTING.md # Contribution guidelines
+├── LICENSE # Project license
+├── Makefile # Build automation
+├── README.md # This file
+├── package.json # Node.js dependencies
+├── package-lock.json # Dependency lock file
+├── docs/ # Documentation and submissions
+│ ├── submissions/ # Course deliverables
+│ └── images/ # Screenshots and diagrams
+├── src/ # Source code for services
+├── test/ # Test configurations
+│ └── tracetesting/ # Trace validation tests
+├── kubernetes/ # K8s deployment files (future)
+├── internal/ # Internal configurations
+├── pb/ # Protocol buffers
+├── grafana/ # Grafana dashboards
+├── prometheus/ # Prometheus configuration
+└── elasticsearch/ # ElasticSearch settings
 
 ## Dashboard Screenshots
 
